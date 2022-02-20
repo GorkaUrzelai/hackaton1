@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>Vasco Tour</title>
+    <link rel = "icon" type = "image/png" href = "/images/logo.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
+
+</head>
+<body>
+<header>
+    <nav th:replace="/includes/header :: header_fragment"></nav>
+</header>
+
+<div class="container">
+    <div class=" text-center">
+        <h1 class="pt-3">Prepara tu tour</h1>
+    </div>
+    <div class=" row d-flex justify-content-center">
+
+
+        <p class="w-50 text-center">¡Antes de comenzar, tenemos que hacerte unas preguntas para poder ofrecerte la mejor
+            experiencia!</p>
+
+        <div class="d-flex justify-content-center my-4">
+            <button type="button" style="background-color: rgba(93,238,12,0.65)">
+                <a th:href="@{/planificar/1}"><p><b>Empezar cuestionario</b></p></a>
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

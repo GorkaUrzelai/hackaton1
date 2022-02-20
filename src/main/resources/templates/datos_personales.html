@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+       <title>Vasco Tour</title>
+    <link rel = "icon" type = "image/png" href = "/images/logo.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
+
+</head>
+<body>
+<header>
+    <nav th:replace="/includes/header :: header_fragment"></nav>
+</header>
+
+<div class="container">
+    <div class=" text-center">
+        <h1 class="pt-3">Prepara tu tour (datos necesarios)</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="card my-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+                    <div class="container">
+                        <div id="contact-form" role="form" autocomplete="off"
+                             th:object="${datos}">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label for="cantidad_viajeros">Cantidad de
+                                            viajeros</label>
+                                            <input id="cantidad_viajeros" type="number" name="number"
+                                                   th:field="*{cantidadPersonas}"
+                                                   class="form-control"
+                                                   placeholder="Indique la cantidad *" required="required
+                                                   " data-error="Por favor escriba la cantidad de viajeros"></div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label for="cantidad_dias">Duración de días</label>
+                                            <input
+                                                    id="cantidad_dias" type="number" name="number" class="form-control"
+                                                    th:field="*{duracion}"
+                                                    placeholder="Indique la duración *" required="required
+                                                   " data-error="Por favor escriba la duracion de los días"></div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label for="tipo_grupo">Tipo de grupo</label> <select
+                                                id="tipo_grupo" name="tipo_grupo" class="form-control" data-error=""  th:field="*{tipo_grupo}">>
+                                            <option value="nada" selected>---Sin especificar---</option>
+                                            <option value="Familia">Familia</option>
+                                            <option value="Amigos">Amigos</option>
+                                        </select></div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label for="form_need">Rango de edad</label> <select
+                                                id="form_need" name="rangoDeEdad" class="form-control" data-error=""
+                                                th:field="*{rangoDeEdad}">
+                                            <option value="nada" selected>---Sin especificar---</option>
+                                            <option value="Adolescente">Adolescente</option>
+                                            <option value="Adulto">Adulto</option>
+                                            <option value="Anciano">Anciano</option>
+                                        </select></div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"><label for="form_lastname">Presupuesto total en euros</label> <input
+                                                id="form_lastname" type="number" name="presupuesto" class="form-control"
+                                                placeholder="Indique su presupuesto"
+                                                data-error=" Lastname is required."  th:field="*{presupuesto}"></div>
+                                    </div>
+
+                                </div>
+                                <div class="d-flex justify-content-center my-4">
+                                    <button type="button" style="background-color: rgba(93,238,12,0.65)">
+                                        <a th:href="@{/mostrarActividades}"><p>Mostrar actividades</p></a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.8 -->
+        </div>
+        <!-- /.row-->
+    </div>
+</div>
+
+
+</body>
+</html>

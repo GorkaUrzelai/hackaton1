@@ -1,0 +1,33 @@
+<nav th:fragment="header_fragment" class="navbar navbar-expand-lg navbar-light bg-light px-5">
+    <a class="navbar-brand" href="/">
+        Vasco Tour
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto mr-1">
+            <li class="nav-item" id="navItemInicio">
+                <a class="nav-link" href="/home">Inicio</a>
+            </li>
+            <li class="nav-item" id="navItemPlanes">
+                <a class="nav-link" th:href="@{/planificar}">Planificar mi ruta</a>
+            </li>
+            <!-- hacer que cuando se pase el raton por encima se desplegue -->
+            <li class="nav-item dropdown" id="navItemCategorias">
+
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Actividades por categorias
+                </a>
+                <ul class="dropdown-menu dropdown-menu-light bga-theme" aria-labelledby="navbarDarkDropdownMenuLink">
+                    <li><a class="dropdown-item" th:href="@{/categoria/deportes}">Deportes</a></li>
+                    <li><a class="dropdown-item" th:href="@{/categoria/deportes}">...</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item" id="navItemContacto">
+                <a class="nav-link" th:href="@{/contacto}">Contacto</a>
+            </li>
+        </ul>
+    </div>
+</nav>

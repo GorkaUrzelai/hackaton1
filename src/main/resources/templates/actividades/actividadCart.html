@@ -1,0 +1,10 @@
+<div class="col">
+    <div class="card h-100 shadow-sm"> <img th:src="${actividad.imagen}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="text-center mb-2" th:text="${actividad.nombre}"></h4>
+            <div class="clearfix mb-3"></div>
+            <span class="float-start badge rounded-pill bg-success" th:text="${actividad.categoria}"></span> <span class="float-end price-hp">20€</span> </div>
+        <h5 class="card-title">----Aquí debe de ir una breve descripcion de la actividad----</h5>
+        <div class="text-center my-4"> <button onclick="añadir()" type="button" class="btn btn-warning">Añadir</button> </div>
+    </div>
+</div>

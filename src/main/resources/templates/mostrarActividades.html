@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+       <title>Vasco Tour</title>
+    <link rel = "icon" type = "image/png" href = "/images/logo.png">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
+    <link rel="stylesheet" href="css/actividades.css">
+</head>
+<body>
+<header>
+    <nav th:replace="/includes/header :: header_fragment"></nav>
+</header>
+<div class="container">
+    <div class=" text-center">
+        <h1 class="pt-3">Actividades posibles</h1>
+    </div>
+    <div class="row text-center">
+        <div class="col-xl-3 col-sm-6 mb-5" th:each="actividad: ${actividades}">
+            <div th:replace="actividades/actividadCart.html"></div>
+        </div>
+    </div>
+</div>
+<div id="cesta-actividades">
+    <div class="row">
+        <h3 class="col ps-5">Actividades seleccionadas: <label id="seleccionados">0</label></h3>
+        <h3 class="col">Tiempo estimado(h): <label id="tiempo">0</label></h3>
+        <div class="col">
+            <button type="button" class="ms-5 me-3">
+                <a th:href="@{/vistaRutaDone}"><p>Confirmar</p></a>
+                <button type="button" class="">
+                <a th:href="@{/vistaRutaNotDone}"><p>Ver seleccionados</p></a>
+            </button>
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+
+    function añadir() {
+        var integer_value = parseInt(document.getElementById("seleccionados").innerHTML);
+        integer_value = integer_value + 1;
+        var total = document.getElementById("seleccionados");
+        total.innerHTML = "" + integer_value;
+        var integer_value = parseInt(document.getElementById("tiempo").innerHTML);
+        integer_value = integer_value + 1.2;
+        var total = document.getElementById("tiempo");
+        total.innerHTML = "" + integer_value;
+    }
+
+
+</script>
+</body>
+</html>

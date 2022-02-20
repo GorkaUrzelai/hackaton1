@@ -1,0 +1,16 @@
+.bg-theme {
+    background-color: blue;
+}
+
+.bga-theme {
+    background-color: rgb(68, 68, 255);
+}
+
+.navbar * {
+    color: white;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
